@@ -1,0 +1,14 @@
+abstract;
+strict( 2 );
+with hierarchy;
+
+define behavior for za_travel_filter alias Filter
+{
+  field ( suppress ) Dummy;
+  association _travel;
+}
+
+define behavior for za_travel_table alias Table
+{
+  field ( suppress ) Dummy;
+}

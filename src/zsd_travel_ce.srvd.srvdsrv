@@ -1,0 +1,4 @@
+@EndUserText.label: 'Travel CE'
+define service ZSD_TRAVEL_CE {
+  expose ZI_TRAVEL_CE;
+}

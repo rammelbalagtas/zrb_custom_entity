@@ -1,0 +1,23 @@
+unmanaged implementation in class zbp_i_travel_ce unique;
+strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZI_TRAVEL_CE alias Travel
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+  field ( readonly ) Travel_ID;
+  action approveTravel result [1] $self;
+  action resetSelected result [1] $self;
+  static action ( authorization : global ) approveAll;
+  static action ( authorization : global ) resetAll deep parameter za_travel_filter;
+
+  side effects {
+    action approveTravel affects $self;
+    action resetSelected affects $self;
+  }
+}
