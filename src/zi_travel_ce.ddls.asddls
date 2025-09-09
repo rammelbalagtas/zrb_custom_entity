@@ -17,7 +17,7 @@ define root custom entity ZI_TRAVEL_CE
   
   @EndUserText.label: 'Travel ID'
   @UI.lineItem: [{ position: 10 },
-  { type: #FOR_ACTION, dataAction: 'approveTravel', label: 'Approve' },
+  { type: #FOR_ACTION, dataAction: 'approveTravel', label: 'Process (based on selection)' },
   { type: #FOR_ACTION, dataAction: 'resetSelected', label: 'Reset (based on selection)' } ]
   @UI.selectionField: [{ position: 10 }]
   @UI.identification: [{ position: 10 }]
@@ -54,7 +54,7 @@ define root custom entity ZI_TRAVEL_CE
   @UI.lineItem: [{ position: 80 } ]
   @UI.identification: [{ position: 80 }]
       Currency_Code : abap.cuky;
-  @EndUserText.label: 'Approved'
+  @EndUserText.label: 'Processed'
   @UI.lineItem: [{ position: 90 } ]
   @UI.selectionField: [{ position: 90 }]
   @UI.identification: [{ position: 90 }]

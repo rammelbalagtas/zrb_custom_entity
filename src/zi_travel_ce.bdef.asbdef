@@ -13,7 +13,7 @@ authorization master ( instance )
   field ( readonly ) Travel_ID;
   action approveTravel result [1] $self;
   action resetSelected result [1] $self;
-  static action ( authorization : global ) approveAll;
+  static action ( authorization : global ) approveAll deep parameter za_travel_filter;
   static action ( authorization : global ) resetAll deep parameter za_travel_filter;
 
   side effects {
